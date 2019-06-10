@@ -77,7 +77,7 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <p>This is working</p>
+          <p>React Rolodex</p>
           {this.state.results.map((results, index) => (
             <HiddenCard
               key={index}
