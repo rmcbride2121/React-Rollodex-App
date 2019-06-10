@@ -7,7 +7,6 @@ function UserCard(props) {
     <div>
       <img src={props.picture} className="img-cirlce" />
       <p>{props.firstName}</p>
-      <span>{props.lastName}</span>
       <button className="btn btn-info" onClick={props.onClick}>Hide Details</button>
       <p>{props.email}</p>
     </div>
@@ -19,7 +18,7 @@ function HiddenCard(props) {
   return (
     <div>
       <img src={props.picture} className="img-cirlce" />
-      <p>{props.firstName}<span>{props.lastName}</span></p>
+      <p>{props.firstName}</p>
       <button className="btn btn-info" onClick={props.onClick}>Show Details</button>
     </div>
   );
@@ -68,7 +67,6 @@ class App extends Component {
             <UserCard
               key={index}
               firstName={results.name.first}
-              lastName={results.name.last}
               email={results.email}
               picture={results.picture.medium}
               onClick={this.onClick}
@@ -84,7 +82,6 @@ class App extends Component {
             <HiddenCard
               key={index}
               firstName={results.name.first}
-              lastName={results.name.last}
               picture={results.picture.medium}
               onClick={this.onClick}
             />
