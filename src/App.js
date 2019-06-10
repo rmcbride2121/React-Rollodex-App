@@ -4,7 +4,7 @@ import "./App.css";
 function UserCard(props) {
 
   return (
-    <div>
+    <div className="col-md-2 target card">
       <img src={props.picture} className="img-cirlce" />
       <p>{props.firstName}</p>
       <button className="btn btn-info" onClick={props.onClick}>Hide Details</button>
@@ -16,7 +16,7 @@ function UserCard(props) {
 function HiddenCard(props) {
 
   return (
-    <div>
+    <div className="col-md-2 target card">
       <img src={props.picture} className="img-cirlce" />
       <p>{props.firstName}</p>
       <button className="btn btn-info" onClick={props.onClick}>Show Details</button>
@@ -61,8 +61,7 @@ class App extends Component {
   render() {
     if (this.state.isHidden === false){
       return (
-        <div className="App">
-          <p>This is working</p>
+        <div className="App row">
           {this.state.results.map((results, index) => (
             <UserCard
               key={index}
@@ -76,8 +75,7 @@ class App extends Component {
       );
     } else {
       return (
-        <div className="App">
-          <p>React Rolodex</p>
+        <div className="App row">
           {this.state.results.map((results, index) => (
             <HiddenCard
               key={index}
